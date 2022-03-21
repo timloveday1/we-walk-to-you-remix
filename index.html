@@ -5,26 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- custom font -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Eater&display=swap"
       rel="stylesheet"
     />
     <!-- end custom font -->
 
-    <title>We walk to you</title>
+    <title>I love cake always</title>
 
     <!-- styles -->
     <style>
       body {
-        font-family: "Dosis", sans-serif;
+        font-family: "Eater", cursive;
         margin: 2em;
-        background-color: #000;
-        color: #fff;
-        font-size: 1.2em;
+        background-color: #7616f2;
+        color: #1fbcdb;
+        font-size: 1.7em;
       }
       h1 {
-        color: #fff;
+        color: #1fbcdb;
       }
       #poem > div {
         height: 1.2em;
@@ -35,13 +36,13 @@
     </style>
   </head>
   <body>
-    <h1>We walk to you</h1>
+    <h1>I love cake always</h1>
     <div id="poem"></div>
     <script>
       // set up the lists of words
-      const subjects = "you,I,we,they".split(","),
-        verbs = "run,walk,speak,drift,talk,whisper".split(","),
-        objects = "me,you,her,him,them".split(",");
+      const subjects = "cake,dish,oven,crockery".split(","),
+        verbs = "burns,heats,bakes,fries,mixes,whisks".split(","),
+        objects = "kitchen,table,bowl,spoon,fork".split(",");
       // set up the counter
       let counter = 0;
 
@@ -61,7 +62,7 @@
           getRandomFromList(subjects) +
           " " +
           getRandomFromList(verbs) +
-          " to " +
+          " " +
           getRandomFromList(objects);
         const lineText = document.createTextNode(text);
         line.appendChild(lineText);
@@ -83,9 +84,9 @@
       // implement the rules of the poem
       function processPoem() {
         counter++;
-        if (counter % 5 === 0) {
+        if (counter % 6 === 0) {
           addBlankLine();
-        } else if (counter % 5 === 2 || counter % 5 === 4) {
+        } else if (counter % 6 === 2 || counter % 6 === 3) {
           // if the second or fourth line add the line with an indent
           addLine(true);
         } else {
@@ -95,7 +96,7 @@
           removeFirstLine();
         }
       }
-      window.setInterval(processPoem, 1000);
+      window.setInterval(processPoem, 100);
     </script>
 
     <!-- include the Glitch button to show what the webpage is about and
